@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Hittable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background 5
+    uniqueID: 4257327399
+    locked: 0
+  - name: Background 4
+    uniqueID: 2998735321
+    locked: 0
+  - name: Background 3
+    uniqueID: 1241327883
+    locked: 0
+  - name: Background 2
+    uniqueID: 1161304849
+    locked: 0
+  - name: Background 1
+    uniqueID: 4176100737
+    locked: 0
+  - name: Background Environment
+    uniqueID: 1832999647
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground Environment
+    uniqueID: 16200827
+    locked: 0
+  - name: UI
+    uniqueID: 915984055
+    locked: 0
