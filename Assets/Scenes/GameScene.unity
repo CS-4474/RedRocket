@@ -5714,7 +5714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffbc7e5c8176684cb67dc888ee4ac9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1490496220}
+  spawnPoint: {fileID: 2110183479}
   playerManager: {fileID: 1748351561}
   requiredStillTime: 2
   requiredUpwardness: 40
@@ -13017,18 +13017,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7406762759346418907}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1490496220 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6588176840557399728, guid: 21f416f76c577f34dadf7c16a143020f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7406762759346418907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29033560d876f846a705ec868241afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1526009652
 PrefabInstance:
   m_ObjectHideFlags: 0

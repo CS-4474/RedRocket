@@ -51,6 +51,15 @@ namespace Assets.Scripts.UI
         private Timeline<string, ValueCommand> timeline => timelineData.Data;
         #endregion
 
+        float[,] thrusterValues;
+        Dictionary<float, Color> thrusterColorDict = new Dictionary<float, Color>(){
+               { 0f, Color.white},
+               { .25f, new Color(1,0,0)},
+               { .5f, new Color(1,113f/255,0)},
+               { .75f, new Color(1,1,0,1)},
+               { 1f, new Color(0,1,0,1)},
+            };
+
         #region Initialisation Functions
         private void Awake()
         {
@@ -93,6 +102,14 @@ namespace Assets.Scripts.UI
                 // Initialise it.
                 newRow.Initialise(i, timeline.RowLength);
             }
+            thrusterValues = new float[timeline.RowCount, timeline.RowLength];
+            for (int i = 0; i < thrusterValues.GetLength(0); i++)
+            {
+                for (int j = 0; j < thrusterValues.GetLength(1); j++)
+                {
+                    thrusterValues[i, j] = 0f;
+                }
+            }
         }
         #endregion
 
@@ -103,7 +120,7 @@ namespace Assets.Scripts.UI
         #region Timing Functions
         public void Begin()
         {
-            
+
         }
 
         public void DoTick(int tick)
@@ -145,5 +162,73 @@ namespace Assets.Scripts.UI
             commandWindow.SetDataContext(this, timelineData, shipPart, tick);
         }
         #endregion
+
+        public void ToggleTurret(int row, int col)
+        {
+            ShipPart shipPart = playerManager.Player.GetShipPartFromName(timelineData.Data.GetRowLabel(row));
+            Command command = shipPart.GetCapableCommandByName("Fire bullet");
+
+            thrusterValues[row, col] = thrusterValues[row, col] == 1 ? 0 : 1;
+            if (thrusterValues[row, col] == 0)
+            {
+                Color grey = new Color(101f / 255, 101f / 255, 101f / 255);
+
+                Button timeButton = GetTimeButton(row, col);
+
+                ColorBlock buttonColours = timeButton.colors;
+                buttonColours.normalColor = grey;
+                buttonColours.highlightedColor = grey;
+                buttonColours.pressedColor = grey;
+                timeButton.colors = buttonColours;
+                timelineData.Data.RemoveRowColumnData(row, col);
+
+            }
+            else
+            {
+
+                Button timeButton = GetTimeButton(row, col);
+
+                ColorBlock buttonColours = timeButton.colors;
+                buttonColours.normalColor = Color.black;
+                buttonColours.highlightedColor = Color.black;
+                buttonColours.pressedColor = Color.black;
+                timeButton.colors = buttonColours;
+                timelineData.Data.RemoveRowColumnData(row, col);
+                timelineData.Data.EditRowColumnData(row, col, new ValueCommand("", command));
+
+            }
+
+        }
+        public void ToggleThrusterStrength(int row, int col, bool clearValue)
+        {
+            ShipPart shipPart = playerManager.Player.GetShipPartFromName(timelineData.Data.GetRowLabel(row));
+            Command command = shipPart.GetCapableCommandByName("Set thrust to X%");
+
+            if (clearValue)
+            {
+                thrusterValues[row, col] = 0f;
+                timelineData.Data.RemoveRowColumnData(row, col);
+                Color grey = new Color(101f / 255, 101f / 255, 101f / 255);
+                Button timeButton = GetTimeButton(row, col);
+
+                ColorBlock buttonColours = timeButton.colors;
+                buttonColours.normalColor = grey;
+                buttonColours.highlightedColor = grey;
+                buttonColours.pressedColor = grey;
+                timeButton.colors = buttonColours;
+            }
+            else
+            {
+                thrusterValues[row, col] = thrusterValues[row, col] == 0f ? 1f : thrusterValues[row, col] - .25f;
+
+                timelineData.Data.EditRowColumnData(row, col, new ValueCommand(thrusterValues[row, col].ToString(), command));
+                Button timeButton = GetTimeButton(row, col);
+                ColorBlock buttonColours = timeButton.colors;
+                buttonColours.normalColor = thrusterColorDict[thrusterValues[row, col]];
+                buttonColours.highlightedColor = thrusterColorDict[thrusterValues[row, col]];
+                buttonColours.pressedColor = thrusterColorDict[thrusterValues[row, col]];
+                timeButton.colors = buttonColours;
+            }
+        }
     }
 }
