@@ -80,14 +80,14 @@ namespace Assets.Scripts.UI
             foreach (Transform child in labelsElement) Destroy(child.gameObject);
 
             // Create the header.
-            Text headerLabel = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
-            headerLabel.text = "Ship Part";
+            //Text headerLabel = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
+            //headerLabel.text = "Ship Part";
             header = Instantiate(headerPrefab, gridElement).GetComponent<UITimelineHeader>();
             header.InitialiseTimeMarkers(timeline.RowLength);
 
             // Create the rows.
             rows = new List<UITimelineRow>(timeline.RowCount);
-            for (int i = 0; i < timeline.RowCount; i++)
+            for (int i = timeline.RowCount - 1; i >= 0; i--)
             {
                 // Create the label.
                 Text label = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
@@ -102,6 +102,9 @@ namespace Assets.Scripts.UI
                 // Initialise it.
                 newRow.Initialise(i, timeline.RowLength);
             }
+
+            rows.Reverse();
+
             thrusterValues = new float[timeline.RowCount, timeline.RowLength];
             for (int i = 0; i < thrusterValues.GetLength(0); i++)
             {
@@ -110,6 +113,10 @@ namespace Assets.Scripts.UI
                     thrusterValues[i, j] = 0f;
                 }
             }
+
+            Text headerLabel = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
+            headerLabel.text = "Ship Part";
+
         }
         #endregion
 
