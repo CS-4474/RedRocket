@@ -28,12 +28,7 @@ namespace Assets.Scripts.Ship
         #region Command Functions
         public override void ExecuteCommand(ValueCommand valueCommand)
         {
-            switch (valueCommand.Command.CommandType)
-            {
-                case CommandType.Fire:
-                    FireBullet();
-                    break;
-            }
+            FireBullet();
         }
         #endregion
     }

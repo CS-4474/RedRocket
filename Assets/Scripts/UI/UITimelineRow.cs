@@ -23,6 +23,9 @@ namespace Assets.Scripts.UI
         #endregion
 
         #region Initialisation Functions
+
+        int prevCol = -1;
+        int prevRow = -1;
         private void Awake()
         {
             timelineContainer = GetComponentInParent<UITimeline>();
@@ -49,11 +52,16 @@ namespace Assets.Scripts.UI
                 {
                     ColorBlock buttonColours = newButton.colors;
                     buttonColours.normalColor = new Color(0, 1, 0);
+                    buttonColours.highlightedColor = new Color(0, 1, 0);
+                    buttonColours.selectedColor = new Color(0, 1, 0);
                     newButton.colors = buttonColours;
                 }
 
                 int iCopy = i;
-                newButton.onClick.AddListener(() => editTimedCommand(iCopy));
+                newButton.onClick.AddListener(() =>
+                {
+                    editTimedCommand(iCopy, Input.GetKey(KeyCode.LeftControl), Input.GetKey(KeyCode.LeftShift));
+                });
             }
         }
         #endregion
@@ -63,9 +71,62 @@ namespace Assets.Scripts.UI
         #endregion
 
         #region Click Functions
-        private void editTimedCommand(int tick)
+        private void editTimedCommand(int verticalIndex, bool clearVal, bool batchSelect)
         {
-            timelineContainer.ShowEditCommandWindow(Index, tick);
+            // timelineContainer.ShowEditCommandWindow(Index, verticalIndex);
+            if (batchSelect && prevRow == Index && prevCol != verticalIndex)
+            {
+                if (prevCol < verticalIndex)
+                {
+                    for (int i = prevCol + 1; i < verticalIndex; i++)
+                    {
+                        if (Index == 4)
+                        {
+                            timelineContainer.ToggleTurret(Index, i);
+
+                        }
+                        else
+                        {
+                            timelineContainer.ToggleThrusterStrength(Index, i, clearVal);
+                        }
+                    }
+                }
+                else if (prevCol > verticalIndex)
+                {
+                    for (int i = prevCol - 1; i > verticalIndex; i--)
+                    {
+                        if (Index == 4)
+                        {
+                            timelineContainer.ToggleTurret(Index, i);
+
+                        }
+                        else
+                        {
+                            timelineContainer.ToggleThrusterStrength(Index, i, clearVal);
+                        }
+                    }
+                }
+
+                prevRow = -1;
+                prevCol = -1;
+            }
+            else
+            {
+                prevRow = Index;
+                prevCol = verticalIndex;
+            }
+            if (Index == 4)
+            {
+                timelineContainer.ToggleTurret(Index, verticalIndex);
+
+            }
+            else
+            {
+                timelineContainer.ToggleThrusterStrength(Index, verticalIndex, clearVal);
+            }
+
+
+
         }
         #endregion
     }
