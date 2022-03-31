@@ -2,7 +2,6 @@
 using TMPro;
 using System.Collections.Generic;
 using System;
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class CreditText : MonoBehaviour
 {
     TextMeshProUGUI textGUI;
