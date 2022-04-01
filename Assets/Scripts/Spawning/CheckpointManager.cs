@@ -20,6 +20,9 @@ namespace Assets.Scripts.Spawning
         private PlayerManager playerManager = null;
 
         [SerializeField]
+        private HintSystem hintSystemScript = null;
+
+        [SerializeField]
         [Range(1, 10)]
         private float requiredStillTime = 1.0f;
 
@@ -36,6 +39,8 @@ namespace Assets.Scripts.Spawning
         public Checkpoint CurrentCheckpoint { get; set; }
 
         public PlayerManager PlayerManager => playerManager;
+
+        public HintSystem HintSystem => hintSystemScript;
 
         public float RequiredStillTime => requiredStillTime;
 
@@ -59,6 +64,11 @@ namespace Assets.Scripts.Spawning
             maxLevel = PlayerPrefs.GetInt("maxLevel", 0);
 
             SetCheckpoint(CheckpointList[selectedLevel]);
+
+            if (maxLevel == 0)
+            {
+                hintSystemScript.ShowHint(maxLevel);
+            }
         }
         #endregion
 
@@ -74,13 +84,11 @@ namespace Assets.Scripts.Spawning
                     {
                         PlayerPrefs.SetInt("maxLevel", index);
                         maxLevel = index;
+                        hintSystemScript.ShowHint(maxLevel);
                     }
                     break;
                 }
             }
-            
-            Debug.Log(index);
-            Debug.Log(maxLevel);
 
             // Lock the previous checkpoint and unlock the checkpoint after it.
             if (CurrentCheckpoint != null) CurrentCheckpoint.Lock();
