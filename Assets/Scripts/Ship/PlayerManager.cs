@@ -14,10 +14,11 @@ namespace Assets.Scripts.Ship
 
         #region Events
         public UnityEvent OnPlayerRespawn;
+        public UnityEvent OnPlayerNewSpawn;
         #endregion
 
         #region Spawn Functions
-        public void SpawnPlayer(Checkpoint checkpoint)
+        public void SpawnPlayer(Checkpoint checkpoint, bool newCheckpointZoom)
         {
             // Destroy the old player ship.
             if (PlayerExists) Destroy(Player.gameObject);
@@ -29,7 +30,14 @@ namespace Assets.Scripts.Ship
             checkpoint.PositionPlayer(Player.gameObject);
 
             // Fire the player spawn event.
-            OnPlayerRespawn.Invoke();
+            if (newCheckpointZoom)
+            {
+                OnPlayerNewSpawn.Invoke();
+            }
+            else
+            {
+                OnPlayerRespawn.Invoke();
+            }
         }
         #endregion
     }
