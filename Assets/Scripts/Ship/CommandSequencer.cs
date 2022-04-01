@@ -55,7 +55,7 @@ namespace Assets.Scripts.Ship
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Begin();
             }
