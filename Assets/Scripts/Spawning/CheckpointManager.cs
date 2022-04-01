@@ -1,4 +1,7 @@
 ﻿using Assets.Scripts.Ship;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,8 +10,11 @@ namespace Assets.Scripts.Spawning
     public class CheckpointManager : MonoBehaviour
     {
         #region Inspector Fields
+        //[SerializeField]
+        //private Checkpoint spawnPoint = null;
+
         [SerializeField]
-        private Checkpoint spawnPoint = null;
+        private List<Checkpoint> CheckpointList;
 
         [SerializeField]
         private PlayerManager playerManager = null;
@@ -36,6 +42,10 @@ namespace Assets.Scripts.Spawning
         public float RequiredUpwardness => requiredUpwardness;
 
         public float RequiredVelocity => requiredVelocity;
+
+        public int selectedLevel;
+
+        public int maxLevel;
         #endregion
 
         #region Events
@@ -45,13 +55,33 @@ namespace Assets.Scripts.Spawning
         #region Initialisation Functions
         private void Start()
         {
-            SetCheckpoint(spawnPoint);
+            selectedLevel = PlayerPrefs.GetInt("SelectedLevel", 0);
+            maxLevel = PlayerPrefs.GetInt("maxLevel", 0);
+
+            SetCheckpoint(CheckpointList[selectedLevel]);
         }
         #endregion
 
         #region Checkpoint Functions
         public void SetCheckpoint(Checkpoint checkpoint)
         {
+            int index = 0;
+            for (index = 0; index < CheckpointList.Count; index++)
+            {
+                if (CheckpointList[index] == checkpoint)
+                {
+                    if (index > maxLevel)
+                    {
+                        PlayerPrefs.SetInt("maxLevel", index);
+                        maxLevel = index;
+                    }
+                    break;
+                }
+            }
+            
+            Debug.Log(index);
+            Debug.Log(maxLevel);
+
             // Lock the previous checkpoint and unlock the checkpoint after it.
             if (CurrentCheckpoint != null) CurrentCheckpoint.Lock();
             //if (checkpoint.Next != null) checkpoint.Next.SpawnLocked = false;

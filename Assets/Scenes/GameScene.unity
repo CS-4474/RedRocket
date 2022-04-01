@@ -6482,11 +6482,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffbc7e5c8176684cb67dc888ee4ac9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1490496220}
+  CheckpointList:
+  - {fileID: 1490496220}
+  - {fileID: 1741257001}
+  - {fileID: 943064187}
+  - {fileID: 922900388}
+  - {fileID: 2110183479}
   playerManager: {fileID: 1748351561}
   requiredStillTime: 2
   requiredUpwardness: 40
   requiredVelocity: 2
+  selectedLevel: 0
+  maxLevel: 0
   OnNewCheckpoint:
     m_PersistentCalls:
       m_Calls:
