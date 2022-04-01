@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
 
 public class AudioChange : MonoBehaviour
 {
@@ -9,14 +11,17 @@ public class AudioChange : MonoBehaviour
     public Sprite audioOn;
     public Sprite audioOff;
 
-    void Start()
+    private void Start()
     {
         button = GetComponent<Button>();
-        button.image.sprite = audioOn;
+        UISetting.Instance.SwitchAudioImage += SwitchAudioImage;
+        SwitchAudioImage();
     }
 
     public void SwitchAudioImage()
     {
-        button.image.sprite = button.image.sprite == audioOn ? audioOff : audioOn;
+        Debug.Log("ACCESS IMAGE");
+        button.image.sprite = UISetting.Instance.getAudioSetting() == true ? audioOn : audioOff;
     }
+
 }

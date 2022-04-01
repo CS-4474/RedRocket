@@ -16,6 +16,7 @@ public class UIAudioText : MonoBehaviour
 
     public void switchAudioSettingText()
     {
+        Debug.Log("ACCESS TEXT");
         String text = "";
         if (UISetting.Instance.getAudioSetting())
         {

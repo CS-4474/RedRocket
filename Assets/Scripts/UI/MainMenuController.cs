@@ -8,5 +8,7 @@ namespace Assets.Scripts.UI
         public void QuitGame() => Application.Quit();
         
         public void StartGame() => SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+
+        public void BackToMainMenu() => SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
