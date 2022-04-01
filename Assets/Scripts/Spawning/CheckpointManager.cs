@@ -61,7 +61,7 @@ namespace Assets.Scripts.Spawning
             CurrentCheckpoint.SetAsCheckpoint();
 
             // Respawn the player.
-            RespawnPlayer();
+            SpawnPlayerAndZoom();
 
             // Fire the new checkpoint event.
             OnNewCheckpoint.Invoke();
@@ -71,8 +71,14 @@ namespace Assets.Scripts.Spawning
         #region Spawn Functions
         public void RespawnPlayer()
         {
-            playerManager.SpawnPlayer(CurrentCheckpoint);
+            playerManager.SpawnPlayer(CurrentCheckpoint, false);
         }
+
+        public void SpawnPlayerAndZoom()
+        {
+            playerManager.SpawnPlayer(CurrentCheckpoint, true);
+        }
+
         #endregion
     }
 }
