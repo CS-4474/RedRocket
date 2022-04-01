@@ -53,11 +53,11 @@ namespace Assets.Scripts.UI
 
         float[,] thrusterValues;
         Dictionary<float, Color> thrusterColorDict = new Dictionary<float, Color>(){
-               { 0f, Color.white},
-               { .25f, new Color(1,0,0)},
-               { .5f, new Color(1,113f/255,0)},
-               { .75f, new Color(1,1,0,1)},
-               { 1f, new Color(0,1,0,1)},
+                { 0f, Color.white},
+               { .25f, new Color(0,1,0,1)},
+               { .5f, new Color(1,1,0,1)},
+               { .75f,new Color(1,113f/255,0)},
+               { 1f, new Color(1,0,0)},
             };
 
         #region Initialisation Functions
