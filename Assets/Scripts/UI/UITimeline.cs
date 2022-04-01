@@ -237,5 +237,28 @@ namespace Assets.Scripts.UI
                 timeButton.colors = buttonColours;
             }
         }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                for (int row = 0; row < thrusterValues.GetLength(0); row++)
+                {
+                    for (int col = 0; col < thrusterValues.GetLength(1); col++)
+                    {
+                        thrusterValues[row, col] = 0f;
+                        timelineData.Data.RemoveRowColumnData(row, col);
+                        Color grey = new Color(101f / 255, 101f / 255, 101f / 255);
+                        Button timeButton = GetTimeButton(row, col);
+
+                        ColorBlock buttonColours = timeButton.colors;
+                        buttonColours.normalColor = grey;
+                        buttonColours.highlightedColor = grey;
+                        buttonColours.pressedColor = grey;
+                        timeButton.colors = buttonColours;
+                    }
+                }
+
+            }
+        }
     }
 }

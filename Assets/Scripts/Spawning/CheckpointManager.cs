@@ -117,6 +117,14 @@ namespace Assets.Scripts.Spawning
             playerManager.SpawnPlayer(CurrentCheckpoint, true);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RespawnPlayer();
+            }
+        }
+
         #endregion
     }
 }

@@ -62,7 +62,7 @@ namespace Assets.Scripts.DataStructures
         #region Row Functions
         public void RefreshRows(IReadOnlyCollection<T1> rowLabelData)
         {
-            for (int i = 0; i < RowCount; i++)            
+            for (int i = 0; i < RowCount; i++)
                 timeRows[i] = new timelineRow(rowLabelData.ElementAt(i), timeRows[i].TimeData);
         }
 

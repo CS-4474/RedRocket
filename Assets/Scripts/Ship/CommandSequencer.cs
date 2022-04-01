@@ -53,7 +53,17 @@ namespace Assets.Scripts.Ship
                 if (CurrentTick >= timelineData.Data.RowLength) Stop();
             }
         }
-
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Begin();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Stop();
+            }
+        }
         private void doTick()
         {
             // Go over each row, execute any commands on the current tick.
