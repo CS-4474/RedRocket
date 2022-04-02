@@ -10,6 +10,12 @@ namespace Assets.Scripts.UI
     public class UITimeline : MonoBehaviour
     {
         #region Inspector Fields
+        public int maxTimelineSize;
+
+        public int maxSizeTimelineXPos;
+
+        public int maxShipPartCount;
+
         [SerializeField]
         private GameObject timelineRowPrefab;
 
@@ -21,6 +27,12 @@ namespace Assets.Scripts.UI
 
         [SerializeField]
         private GameObject labelPrefab;
+
+        [SerializeField]
+        private GameObject labelIconPrefab;
+
+        [SerializeField]
+        private List<Sprite> labelSprites;
 
         [SerializeField]
         private Canvas rootCanvas;
@@ -45,6 +57,10 @@ namespace Assets.Scripts.UI
         private UITimelineHeader header;
 
         private CommandWindowController commandWindow;
+
+        private RectTransform timelineTransform;
+
+        private RectTransform labelTransform;
         #endregion
 
         #region Properties
@@ -69,6 +85,9 @@ namespace Assets.Scripts.UI
             commandSequencer = GetComponent<CommandSequencer>();
             commandSequencer.OnBegin.AddListener(Begin);
             commandSequencer.OnTick += DoTick;
+
+            timelineTransform = GetComponent<RectTransform>();
+            labelTransform = labelsElement.gameObject.GetComponent<RectTransform>();
         }
         #endregion
 
@@ -80,8 +99,6 @@ namespace Assets.Scripts.UI
             foreach (Transform child in labelsElement) Destroy(child.gameObject);
 
             // Create the header.
-            //Text headerLabel = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
-            //headerLabel.text = "Ship Part";
             header = Instantiate(headerPrefab, gridElement).GetComponent<UITimelineHeader>();
             header.InitialiseTimeMarkers(timeline.RowLength);
 
@@ -90,8 +107,10 @@ namespace Assets.Scripts.UI
             for (int i = timeline.RowCount - 1; i >= 0; i--)
             {
                 // Create the label.
-                Text label = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
-                label.text = timeline.GetRowLabel(i);
+                //Text label = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
+                //label.text = timeline.GetRowLabel(i);
+                Image image = Instantiate(labelIconPrefab, labelsElement).GetComponent<Image>();
+                image.sprite = labelSprites[i];
 
                 // Create the new row.
                 UITimelineRow newRow = Instantiate(timelineRowPrefab, gridElement).GetComponent<UITimelineRow>();
@@ -116,6 +135,9 @@ namespace Assets.Scripts.UI
 
             Text headerLabel = Instantiate(labelPrefab, labelsElement).GetComponent<Text>();
             headerLabel.text = "Ship Part";
+
+            timelineTransform.sizeDelta = new Vector2(timelineTransform.sizeDelta.x, maxTimelineSize * (timeline.RowCount + 3) / (maxShipPartCount + 3));
+            labelTransform.sizeDelta = new Vector2(timelineTransform.sizeDelta.x, maxTimelineSize * (timeline.RowCount + 3) / (maxShipPartCount + 3));
 
         }
         #endregion
