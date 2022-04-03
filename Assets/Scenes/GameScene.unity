@@ -2587,7 +2587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -500, y: 170}
+  m_AnchoredPosition: {x: -515, y: 170}
   m_SizeDelta: {x: 336.7, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468199230
@@ -3070,6 +3070,7 @@ MonoBehaviour:
   minimumSize: 3
   maximumSize: 15
   sensitivity: 4
+  timelineTransform: {fileID: 468199229}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21066,7 +21067,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: -25
   m_Viewport: {fileID: 1868330347}
   m_HorizontalScrollbar: {fileID: 724756618}
   m_VerticalScrollbar: {fileID: 0}

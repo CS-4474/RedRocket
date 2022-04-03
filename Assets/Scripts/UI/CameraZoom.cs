@@ -16,6 +16,9 @@ namespace Assets.Scripts.UI
         [SerializeField]
         [Range(1, 10)]
         private float sensitivity = 0;
+
+        [SerializeField]
+        private RectTransform timelineTransform;
         #endregion
 
         #region Fields
@@ -32,7 +35,7 @@ namespace Assets.Scripts.UI
         #region Update Functions
         private void Update()
         {
-            if (Input.GetAxis("Mouse ScrollWheel") != 0)
+            if (!RectTransformUtility.RectangleContainsScreenPoint(timelineTransform,Input.mousePosition) && Input.GetAxis("Mouse ScrollWheel") != 0)
                 camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - sensitivity * Input.GetAxis("Mouse ScrollWheel"), minimumSize, maximumSize);
         }
         #endregion
