@@ -5015,7 +5015,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 33
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7091,7 +7091,7 @@ PrefabInstance:
     - target: {fileID: 7017281864410742786, guid: 1f086b4f88e753a489431471277559a4,
         type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7017281864410742786, guid: 1f086b4f88e753a489431471277559a4,
         type: 3}
