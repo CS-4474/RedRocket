@@ -9582,7 +9582,7 @@ MonoBehaviour:
     3. Use the scrollwheel and WASD/arrow
     keys to control the camera.
 
-    4. More Information can be found in the instructions
+    4. More information can be found in the instructions
     section of the menu.'
 --- !u!222 &1064760725
 CanvasRenderer:
@@ -12805,7 +12805,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have a new turret on the top of your ship. Shoot when ever you want,
+  m_Text: You have a new turret on the top of your ship. Shoot whenever you want,
     ammo isn't an issue.
 --- !u!222 &1309348897
 CanvasRenderer:
