@@ -32,9 +32,9 @@ Transform:
   m_LocalPosition: {x: 17.550781, y: 6.437914, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
+  - {fileID: 8391084709983602959}
   - {fileID: 1013415812201323473}
   - {fileID: 4873256685965664556}
-  - {fileID: 8391084709983602959}
   - {fileID: 2664081048745324951}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +53,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -284,10 +285,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1013415811630792011}
     m_Modifications:
-    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: m_Name
-      value: Right Thruster
+      propertyPath: requiredForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Force.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_RelativeForce.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.7499981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1013415811630792022}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -306,6 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -318,16 +369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -344,50 +385,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: requiredForce
-      value: 50
+      propertyPath: m_Name
+      value: Right Thruster
       objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Force.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.7499981
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -1.0000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_EnableCollision
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1013415811630792022}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_DampingRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
+    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: maxForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -400,11 +406,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f280f4c1cd6f70743b3f9f4c1f2fcde4,
         type: 2}
-    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: maxForce
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
 --- !u!1 &4873256685965664557 stripped
@@ -426,10 +427,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1013415811630792011}
     m_Modifications:
-    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: m_Name
-      value: Left Side Thruster
+      propertyPath: requiredForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Force.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_RelativeForce.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.99999905
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1013415811630792022}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -448,6 +494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -460,16 +511,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -486,50 +527,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: requiredForce
-      value: 50
+      propertyPath: m_Name
+      value: Left Side Thruster
       objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Force.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1013415811630792022}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_DampingRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.99999905
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
+    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: maxForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -542,11 +548,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f280f4c1cd6f70743b3f9f4c1f2fcde4,
         type: 2}
-    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: maxForce
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
       propertyPath: capableCommands.Array.data[1]
@@ -574,10 +575,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1013415811630792011}
     m_Modifications:
-    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: m_Name
-      value: Left Thruster
+      propertyPath: requiredForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Force.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_RelativeForce.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.7499981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1013415811630792022}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -596,6 +638,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -607,16 +654,6 @@ PrefabInstance:
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
@@ -634,46 +671,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: requiredForce
-      value: 50
+      propertyPath: m_Name
+      value: Left Thruster
       objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Force.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1013415811630792022}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -1.0000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_DampingRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.7499981
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
+    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: maxForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -686,11 +692,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f280f4c1cd6f70743b3f9f4c1f2fcde4,
         type: 2}
-    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: maxForce
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
       propertyPath: capableCommands.Array.data[1]
@@ -718,10 +719,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1013415811630792011}
     m_Modifications:
-    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: m_Name
-      value: Right Side Thruster
+      propertyPath: requiredForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Force.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_RelativeForce.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.99999905
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1013415811630792022}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -740,6 +786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -752,16 +803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5598301360139363840, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -778,50 +819,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: -3761322774805365692, guid: b7857248fbddc5d4d9f7b20176136bf7,
+    - target: {fileID: 5598301360139363841, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
-      propertyPath: requiredForce
-      value: 50
+      propertyPath: m_Name
+      value: Right Side Thruster
       objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Force.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497286, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_RelativeForce.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1013415811630792022}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_DampingRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497287, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.99999905
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786497288, guid: b7857248fbddc5d4d9f7b20176136bf7, type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
+    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
+        type: 3}
+      propertyPath: maxForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
@@ -834,11 +840,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f280f4c1cd6f70743b3f9f4c1f2fcde4,
         type: 2}
-    - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
-        type: 3}
-      propertyPath: maxForce
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8858077583622982408, guid: b7857248fbddc5d4d9f7b20176136bf7,
         type: 3}
       propertyPath: capableCommands.Array.data[1]

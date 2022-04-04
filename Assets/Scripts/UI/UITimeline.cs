@@ -112,6 +112,9 @@ namespace Assets.Scripts.UI
                 Image image = Instantiate(labelIconPrefab, labelsElement).GetComponent<Image>();
                 image.sprite = labelSprites[i];
 
+                //hardcode level 1 case
+                if (timeline.RowCount == 2) image.sprite = labelSprites[i + 1];
+
                 // Create the new row.
                 UITimelineRow newRow = Instantiate(timelineRowPrefab, gridElement).GetComponent<UITimelineRow>();
 

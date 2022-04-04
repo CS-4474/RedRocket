@@ -2332,9 +2332,9 @@ MonoBehaviour:
   labelIconPrefab: {fileID: 227078838018332882, guid: 3c598ad37dda5cf429e3004696d05d66,
     type: 3}
   labelSprites:
+  - {fileID: 21300000, guid: 3063c7ba42679d94b8c302e11091031a, type: 3}
   - {fileID: 21300000, guid: 868f238e8376ab6459aa5afb6b0cc1c7, type: 3}
   - {fileID: 21300000, guid: 23ccf3884a5d8654d925c22c6f09bcb5, type: 3}
-  - {fileID: 21300000, guid: 3063c7ba42679d94b8c302e11091031a, type: 3}
   - {fileID: 21300000, guid: 4706bb723feaf4f479916872aec5e3f9, type: 3}
   - {fileID: 21300000, guid: f232f058abafd984799000f3ddf7ef3b, type: 3}
   rootCanvas: {fileID: 1774840644}
@@ -6799,7 +6799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckpointList:
-  - {fileID: 2110183479}
+  - {fileID: 1490496220}
   - {fileID: 1741257001}
   - {fileID: 943064187}
   - {fileID: 922900388}
@@ -15032,6 +15032,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7406762759346418907}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490496220 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6588176840557399728, guid: 21f416f76c577f34dadf7c16a143020f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7406762759346418907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29033560d876f846a705ec868241afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1526009652
 PrefabInstance:
   m_ObjectHideFlags: 0
