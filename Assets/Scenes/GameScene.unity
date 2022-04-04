@@ -6572,7 +6572,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 16
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7697,7 +7697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &958486221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7766,7 +7766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -14.9, y: 0}
   m_SizeDelta: {x: 361.7942, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &970786336 stripped
@@ -9539,8 +9539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8, y: -9.8}
-  m_SizeDelta: {x: 450, y: 50}
+  m_AnchoredPosition: {x: 0.8, y: -17.2}
+  m_SizeDelta: {x: 450, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1064760724
 MonoBehaviour:
@@ -9574,7 +9574,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Text Goes here.
+  m_Text: '1. Click on the squares in the timeline to adjust your thrusters.
+
+    2.
+    Aim for a smooth landing in the green dome!
+
+    3. Use the scrollwheel and WASD/arrow
+    keys to control the camera.
+
+    4. More Information can be found in the instructions
+    section of the menu.'
 --- !u!222 &1064760725
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11452,7 +11461,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Text Goes here.
+  m_Text: Use your new side thrusters to carefully navigate to the next checkpoint/level.
 --- !u!222 &1134320690
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12796,7 +12805,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Text Goes here.
+  m_Text: You have a new turrent on the top of your ship. Shoot when ever you want,
+    ammo isn't an issue.
 --- !u!222 &1309348897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19085,7 +19095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -18.2, y: 0}
   m_SizeDelta: {x: 361.7942, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690208809
@@ -19175,7 +19185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -16.5, y: 0}
   m_SizeDelta: {x: 361.7942, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718830369
